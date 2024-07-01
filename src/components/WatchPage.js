@@ -3,6 +3,7 @@ import { closeMenu } from "../store/appSlice";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 function WatchPage({name}){
    const dispatch= useDispatch();
    const [searchParams] = useSearchParams();
@@ -14,7 +15,8 @@ function WatchPage({name}){
     })
     return(
         <div className="flex flex-col">
-        <div className="px-5">
+        <div className="px-5 flex">
+            <div>
           <iframe width="1200" 
           height="600"
            src={`https://www.youtube.com/embed/${searchParams.get("v")}`}
@@ -24,6 +26,9 @@ function WatchPage({name}){
             referrerpolicy="strict-origin-when-cross-origin"
              allowFullScreen>
              </iframe>
+             </div>
+  <LiveChat/>
+
         </div>
         <CommentsContainer/>
         </div>
