@@ -30,7 +30,6 @@ export function Head(){
     async function generateSuggestions(){
      const suggestion = await fetch(YOUTUBE_SEARCH_API+searchQuery);
      const result = await suggestion.json();
-      console.log({result});
       setSuggestions(result[1]);
       dispatch(cacheResults({[searchQuery]: result[1]}));
     }

@@ -13,7 +13,6 @@ export function VideoContainer(){
      const  fetchVideos=async()=>{
         const videosData = await fetch(YOUTUBE_VIDEOS_API);
         const response = await videosData.json();;
-        console.log("VideoContainer", response)
         setVideos(response.items);
     }
 

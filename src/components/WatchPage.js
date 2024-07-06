@@ -8,8 +8,6 @@ function WatchPage({name}){
    const dispatch= useDispatch();
    const [searchParams] = useSearchParams();
 
-   console.log()
-
     useEffect(function closeLeftMenu(){
         dispatch(closeMenu())
     })
